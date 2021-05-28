@@ -1,0 +1,28 @@
+<div class="container">
+        <ngx-spinner
+        bdColor="rgba(51,51,51,0.8)"
+        size="medium"
+        color="#fff"
+        type="ball-scale-multiple"
+        >
+        <p style="font-size: 20px; color: white">{{textSpinner}}</p>
+        </ngx-spinner>
+    <div class="row mt-5">
+        <div class="col-md-4 mx-auto">
+            <form (ngSubmit)="onCreate()" #f="ngForm" novalidate>
+                <div class="form-group">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" class="form-control" id="nombre" name="nombre"
+                    [(ngModel)]="nombre" required autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label for="precio">Precio</label>
+                    <input type="text" class="form-control" id="precio" name="precio"
+                    [(ngModel)]="precio" required autocomplete="off">
+                </div>
+                <button class="btn btn-outline-success w-100 mt-3" [disabled]="!f.valid">Crear</button>
+                <button class="btn btn-outline-primary w-100 mt-3" routerLink='/'><i class="fas fa-arrow-alt-circle-left"></i> Volver</button>
+            </form>
+        </div>
+    </div>
+</div>
